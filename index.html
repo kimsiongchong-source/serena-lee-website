@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serena Lee Photography</title>
+<meta name="description" content="Serena Lee is a freelance photographer for weddings and portraits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  /* Layout idea: one calm column of whitespace; left-aligned hero, wide three-up grid, narrow text blocks. */
+  :root {
+    --bg: #e8e4dd;          /* muted stone */
+    --bg-soft: #dfdad2;     /* slightly deeper stone for sections */
+    --ink: #2a2622;
+    --ink-soft: #655e56;
+    --accent: #7d5f4b;      /* dusty clay, used sparingly */
+    --ph-a: #cfc8bd;        /* placeholder tones */
+    --ph-b: #bdb4a7;
+    --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+    --font-body: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --gutter: clamp(20px, 6vw, 96px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1f1d1a; --bg-soft: #262420; --ink: #ece7df; --ink-soft: #a79f94;
+      --accent: #d2ad93; --ph-a: #34312c; --ph-b: #2b2924;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1f1d1a; --bg-soft: #262420; --ink: #ece7df; --ink-soft: #a79f94;
+    --accent: #d2ad93; --ph-a: #34312c; --ph-b: #2b2924;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  section { padding: 0 var(--gutter); }
+  .wrap { max-width: 1240px; margin: 0 auto; }
+
+  /* Hero */
+  .hero { padding-top: clamp(72px, 14vh, 160px); padding-bottom: clamp(72px, 12vh, 140px); }
+  .hero h1 { font-size: clamp(3.5rem, 11vw, 8rem); }
+  .hero p {
+    margin: 28px 0 44px;
+    max-width: 30ch;
+    font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .button {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    transition: background-color .2s ease;
+  }
+  .button:hover { background: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+  /* Portfolio */
+  .work { padding-bottom: clamp(88px, 14vh, 168px); }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(28px, 4vw, 64px);
+    margin: 0; padding: 0; list-style: none;
+  }
+  .grid figure { margin: 0; }
+  /* Swap each .photo div for <img src="..." alt="..."> when real photos are ready; keep the 4:5 ratio via aspect-ratio. */
+  .photo {
+    aspect-ratio: 4 / 5;
+    width: 100%;
+    border-radius: 2px;
+    background: linear-gradient(155deg, var(--ph-a), var(--ph-b));
+    display: block;
+    object-fit: cover;
+  }
+  .grid figcaption {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 720px) {
+    .grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  /* About */
+  .about { background: var(--bg-soft); padding-top: clamp(80px, 12vh, 144px); padding-bottom: clamp(80px, 12vh, 144px); }
+  .about .wrap { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .about h2 { font-size: clamp(2.25rem, 5vw, 3.5rem); }
+  .about p { margin: 0 0 1.25em; max-width: 56ch; }
+  .about p:last-child { margin-bottom: 0; }
+  @media (max-width: 720px) { .about .wrap { grid-template-columns: 1fr; gap: 28px; } }
+
+  /* Contact */
+  .contact { padding-top: clamp(88px, 14vh, 168px); padding-bottom: clamp(88px, 14vh, 168px); scroll-margin-top: 0; }
+  .contact h2 { font-size: clamp(2.5rem, 7vw, 5rem); }
+  .contact p { margin: 24px 0 32px; max-width: 40ch; color: var(--ink-soft); }
+  .email {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 5.5vw, 3.25rem);
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 4px;
+    overflow-wrap: anywhere;
+  }
+  .email:hover { color: var(--accent); }
+  footer { padding: 0 var(--gutter) 48px; font-size: 0.875rem; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Serena Lee</h1>
+    <p>Photographer for weddings and portraits, keeping the quiet moments in the frame.</p>
+    <a class="button" href="#contact">Say hello</a>
+  </div>
+</header>
+
+<main>
+  <section class="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <h2 id="work-title" style="position:absolute;left:-9999px">Selected work</h2>
+      <ul class="grid">
+        <li><figure><img class="photo" src="wedding-01.jpg" alt="A bride and groom share a kiss behind a bouquet of white flowers on a lakeside platform" width="408" height="612"><figcaption>Wedding · By the water</figcaption></figure></li>
+        <li><figure><div class="photo" role="img" aria-label="Photo placeholder: portrait"></div><figcaption>Portrait · Window light</figcaption></figure></li>
+        <li><figure><div class="photo" role="img" aria-label="Photo placeholder: wedding"></div><figcaption>Wedding · The first dance</figcaption></figure></li>
+        <li><figure><div class="photo" role="img" aria-label="Photo placeholder: portrait"></div><figcaption>Portrait · Family at home</figcaption></figure></li>
+        <li><figure><div class="photo" role="img" aria-label="Photo placeholder: wedding"></div><figcaption>Wedding · Getting ready</figcaption></figure></li>
+        <li><figure><div class="photo" role="img" aria-label="Photo placeholder: portrait"></div><figcaption>Portrait · Outdoors</figcaption></figure></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <h2 id="about-title">Hi, I'm Serena.</h2>
+      <div>
+        <p>I'm a freelance photographer, and I spend my weekends at weddings and my weekdays making portraits for couples, families and anyone who is tired of stiff pictures of themselves.</p>
+        <p>I work quietly and stay close, so the day feels like yours and the photographs look like it. You'll get a small, carefully edited gallery rather than a thousand near-identical frames.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">Let's talk.</h2>
+      <p>Tell me your date, the place and what matters most. I reply to every message myself.</p>
+      <a class="email" href="mailto:hello@serenalee.photo">hello@serenalee.photo</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© Serena Lee</div>
+</footer>
+
+</body>
+</html>
