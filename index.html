@@ -11,14 +11,14 @@
 <style>
   /* Layout idea: one calm column of whitespace; left-aligned hero, wide three-up grid, narrow text blocks. */
   :root {
-    color-scheme: dark;
-    --bg: #1f1d1a;          /* warm charcoal */
-    --bg-soft: #262420;     /* slightly lifted charcoal for sections */
-    --ink: #ece7df;
-    --ink-soft: #a79f94;
-    --accent: #d2ad93;      /* soft clay, used sparingly */
-    --ph-a: #34312c;        /* placeholder tones */
-    --ph-b: #2b2924;
+    color-scheme: light;
+    --bg: #fbe7a1;          /* soft butter yellow */
+    --bg-soft: #f6d36b;     /* deeper golden yellow for sections */
+    --ink: #2b1a08;         /* dark brown */
+    --ink-soft: #6b4a1a;
+    --accent: #c2410c;      /* burnt orange */
+    --ph-a: #f3c94f;        /* placeholder tones */
+    --ph-b: #ee9d3b;
     --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
     --font-body: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
     --gutter: clamp(20px, 6vw, 96px);
@@ -61,14 +61,14 @@
     display: inline-block;
     padding: 16px 32px;
     border-radius: 999px;
-    background: var(--ink);
-    color: var(--bg);
+    background: var(--accent);
+    color: #fff8e7;
     text-decoration: none;
     font-size: 1rem;
     letter-spacing: 0.01em;
     transition: background-color .2s ease;
   }
-  .button:hover { background: var(--accent); }
+  .button:hover { background: var(--ink); }
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
   /* Portfolio */
