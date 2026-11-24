@@ -11,28 +11,17 @@
 <style>
   /* Layout idea: one calm column of whitespace; left-aligned hero, wide three-up grid, narrow text blocks. */
   :root {
-    --bg: #e8e4dd;          /* muted stone */
-    --bg-soft: #dfdad2;     /* slightly deeper stone for sections */
-    --ink: #2a2622;
-    --ink-soft: #655e56;
-    --accent: #7d5f4b;      /* dusty clay, used sparingly */
-    --ph-a: #cfc8bd;        /* placeholder tones */
-    --ph-b: #bdb4a7;
+    color-scheme: dark;
+    --bg: #1f1d1a;          /* warm charcoal */
+    --bg-soft: #262420;     /* slightly lifted charcoal for sections */
+    --ink: #ece7df;
+    --ink-soft: #a79f94;
+    --accent: #d2ad93;      /* soft clay, used sparingly */
+    --ph-a: #34312c;        /* placeholder tones */
+    --ph-b: #2b2924;
     --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
     --font-body: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
     --gutter: clamp(20px, 6vw, 96px);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #1f1d1a; --bg-soft: #262420; --ink: #ece7df; --ink-soft: #a79f94;
-      --accent: #d2ad93; --ph-a: #34312c; --ph-b: #2b2924;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #1f1d1a; --bg-soft: #262420; --ink: #ece7df; --ink-soft: #a79f94;
-    --accent: #d2ad93; --ph-a: #34312c; --ph-b: #2b2924;
-    color-scheme: dark;
   }
 
   * { box-sizing: border-box; }
