@@ -21,5 +21,5 @@ To deploy from the command line instead, run `npx vercel` in this folder, then `
 ## Edit the site
 
 - **Photos:** each placeholder in the portfolio grid is a `<div class="photo">`. Replace it with `<img class="photo" src="your-photo.jpg" alt="..." width="..." height="...">` and add the image file next to `index.html`. See the first grid item for the pattern.
-- **Email:** the contact address in `index.html` is a placeholder (`hello@serenalee.photo`). Replace it with her real address in both the link and the visible text.
+- **Email:** the contact address is `admin@gex-technology.com`. To change it, edit both the `mailto:` link and the visible text in the contact section of `index.html`.
 - **Copy:** the about text and photo captions are sample wording.
